@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    encoding_with_bom (0.0.1)
+      iconv (>= 1.0.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    iconv (1.0.4)
+    sqlite3 (1.3.10)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  encoding_with_bom!
+  iconv (~> 1.0.4)
+  sqlite3
