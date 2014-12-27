@@ -1,3 +1,24 @@
 = EncodingWithBom
 
-This project rocks and uses MIT-LICENSE.
+# Encoding and add BOM
+
+This is gem for encoding your text data and adding BOM(Byte Order Mark) in start of line. For example: 
+
+`"Simple string".set_encoding_and_add_bom "UTF-16LE"`
+
+ Result: String line which is correctly displayed in csv document on Microsoft Windows Office Excel and other table viewer.
+
+ ## Instance method of string
+
+ `.set_encoding_and_add_bom(encodign_to)`
+ `.set_encoding_and_add_bom!(encodign_to)`
+ `.add_bom`
+ `.add_bom!`
+ `.set_encoding(encoding_to)`
+ `.set_encoding!(encoding_to)`
+
+ ## Where 
+
+ `encoding_to` -- string, which is encoding to.
+
+ ### Thanks! :)
