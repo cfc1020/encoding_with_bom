@@ -14,3 +14,7 @@ gemspec
 # gem 'debugger'
 
 gem 'iconv', '~> 1.0.4'
+gem 'rails', '>= 3.0.0'
+
+gem 'rspec', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]

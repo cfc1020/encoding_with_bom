@@ -1,11 +1,11 @@
 require 'iconv'
 
 String.class_eval do
-  def set_encoding_and_add_bom(encoding_to)
+  def set_encoding_and_add_bom encoding_to
     set_encoding(encoding_to).add_bom
   end
 
-  def set_encoding_and_add_bom!(encoding_to)
+  def set_encoding_and_add_bom! encoding_to
     replace set_encoding_and_add_bom encoding_to
   end
 
@@ -22,7 +22,7 @@ String.class_eval do
   def set_encoding(encoding_to)
     raise_if_encoding_does_not_exist encoding_to
 
-    Iconv.conv encoding_to, encoding, self
+    Iconv.conv encoding_to, encoding.to_s, self
   end
 
   def set_encoding! encoding_to
@@ -42,13 +42,17 @@ String.class_eval do
 
   BOM_LIST_hex.freeze
 
-  def encoding_exist?(coding)
-    !BOM_LIST_hex[Encoding.find coding].nil?
+  def encoding_exist? coding
+    !BOM_LIST_hex[encoding_creater coding].nil?
   end
 
-  def raise_if_encoding_does_not_exist(*encoding_array)
+  def raise_if_encoding_does_not_exist *encoding_array
     encoding_array.each do |coding|
       raise ArgumentError, "Encoding does not exist for #{coding}" unless encoding_exist? coding
     end
+  end
+
+  def encoding_creater coding
+    Encoding.find coding
   end
 end
