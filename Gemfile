@@ -18,3 +18,4 @@ gem 'rails', '>= 3.0.0'
 
 gem 'rspec', group: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
+gem 'pry-rails', group: [:development, :test]
